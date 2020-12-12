@@ -7,11 +7,12 @@ using namespace std;
 class Book
 {
 protected:
-    string code, Name, author, press, number; //索取号、书名、作者、出版社、最大借阅量
+    string code, Name, author, press;
+    int number; //索取号、书名、作者、出版社、最大借阅量
     bool Is_lend;  //书是否借出
 
 public:
-    Book(string c, string n, string a, string p, string num) //构造函数
+    Book(string c, string n, string a, string p, int num) //构造函数
     {
         code = c; Name = n; author = a;
         press = p; number = num;
@@ -23,12 +24,12 @@ public:
     string GetName(){return Name;}      //获取图书的名字
     string GetAuthor(){return author;}  //获取图书的作者
     string GetPress(){return press;}    //获取图书的出版社
-    string GetNumber(){return number;}  //获取图书的数量
+    int GetNumber(){return number;}  //获取图书的数量
     void SetCode(string c);             //设置图书的索引号
     void SetName(string n);             //设置图书的名字
     void SetAuthor(string a);           //设置图书的作者
     void SetPress(string p);            //设置图书的出版社
-    void SetNumber(string num);         //设置图书的数量
+    void SetNumber(int num);         //设置图书的数量
     void Display();
     friend istream  &operator >> (istream &stream,Book &b);  //重载操作符>>
     friend ostream  &operator << (ostream &stream,Book &b);  //重载操作符<<
@@ -71,7 +72,7 @@ void Book::SetPress(string p) {
     press = p;
 }
 
-void Book::SetNumber(string num) {
+void Book::SetNumber(int num) {
     number = num;
 }
 
@@ -101,7 +102,7 @@ public:
     {Is_Admin=ad;Is_Student=is;}
     User(){Is_Admin=0;Is_Student=1;};//默认读者类型
     int Judge();                   //判断用户类型
-    void SetName(string n);        //设置用户姓名
+    void Setname(string n);        //设置用户姓名
     void SetID(string id);         //设置账号
     void SetKey(string k);         //设置密码
     string getName(){return name;} //获取用户姓名
@@ -117,7 +118,7 @@ int User::Judge() {
     //(Is_Student==true)
 }
 
-void User::SetName(string n) {
+void User::Setname(string n) {
     name = n;
 }
 
@@ -135,10 +136,63 @@ class Log
 {
 public:
     User u;       //存储登录成功用户的信息
+    int number;
+    void SignIN(User *p);  //注册
     void Login(User *p);   //登陆
     bool Is_Log;
+    Log(){number=0;};
 
 };
+
+void Log::SignIN(User *p) {
+    string a;
+    int f;
+    while(1)
+    {
+        f=1;
+        cout<<"请输入学号：";
+        cin>>a;
+        for(int i=0;i<=User::User_Number;i++)
+        {
+            if(p[i].GetID()==a)
+            {
+                cout<<"该学生已注册！"<<endl;
+                f=0;
+            }
+        }
+        if(f==1){break;}
+    }
+
+    string b;
+    string c, cc;
+    while(1)
+    {
+        cout<<"请输入姓名："<<endl;
+        cin>>b;
+        cout<<"请输入密码："<<endl;
+        cin>>c;
+        cout<<"请再次输入密码："<<endl;
+        cin>>cc;
+        if(cc!=c)
+        {
+            cout<<"两次输入密码不一致，请重新输入。"<<endl;
+        }
+        if(cc==c)
+        {
+            break;
+        }
+    }
+    (p+User::User_Number)->Setname(b);
+    (p+User::User_Number)->SetID(a);
+    (p+User::User_Number)->SetKey(c);
+    (p+User::User_Number)->SetIdentity(false,true);
+    u.Setname(b);
+    u.SetID(a);
+    u.SetKey(c);
+    number=User::User_Number;
+    User::User_Number++;
+
+}
 
 void Log::Login(User *p) {
     string a,b;
@@ -152,7 +206,7 @@ void Log::Login(User *p) {
         if(a==p[i].GetID()&&b==p[i].GetKey())
         {
             u.SetIdentity(p[i].GetIsAdmin(),p[i].GetIsStudent());
-            u.SetID(a);u.SetKey(b);u.SetName(p[i].getName());break;
+            u.SetID(a);u.SetKey(b);u.Setname(p[i].getName());break;
             flag=1;
         }
     }
@@ -165,7 +219,7 @@ void Log::Login(User *p) {
             cout<<"尊敬的管理员"<<u.getName()<<",您好！"<<endl;
             Is_Log=true;
         }
-        if(u.Judge()==4)
+        else if(u.Judge()==4)
         {
             LogName=u.getName();
             cout<<"登录成功"<<endl;
@@ -189,13 +243,21 @@ protected:
 public:
     static int Student_Number;
     static int max_lent;
-
-    Student(){SetIdentity(false, true);}
-    //Student():User(){User::Is_Admin=false;User::Is_Student= true;}
-    Student(string n, string id, string k,string in)//:User(n,id,k)
+    void zhuce(User *U, Log a, Student *S)
     {
-        name=n;ID=id;key=k;institute=in;
+        a.SignIN(U);
+        Is_Student= true;
+        cout<<"注册成功！"<<endl;
+        U[a.number].SetIdentity(false, true);
+        SetIdentity(false, true);
+        User::Setname(a.u.getName());
+        User::SetID(a.u.GetID());
+        User::SetKey(a.u.GetKey());
+        S[Student::Student_Number].Setname(a.u.getName());
+        Student::Student_Number++;
     }
+    Student():User(){User::Is_Admin= false;User::Is_Student= true;}
+
 
     void Book_Show(Book *B);   //图书展示
     void Book_Find(Book *B);   //查找图书
@@ -254,23 +316,29 @@ class Admin: public User,public Log
 public:
     static int Admin_Number;
 
+
+
     Admin(){SetIdentity(true, false);}
     Admin(string n, string id, string k,User *U)
     {
-        U[User_Number].SetName(n);
-        U[User_Number].SetID(id);
-        U[User_Number].SetKey(k);
-        SetIdentity(true, false);
+        U[U->User_Number].Setname(n);
+        U[U->User_Number].SetKey(k);
+        Is_Admin=1;Is_Student=0;
+        U[U->User_Number].SetIdentity(true,false);
         U->User_Number++;
         name=n;
         key=k;
     }
-
+    //图书管理
     static void Book_Add(Book *B);     //添加图书
-    void Book_Delete(Book *B);  //删除图书
-    void Book_Alter(Book *B);   //修改图书信息
-    void Book_Find(Book *B);    //查找图书
+    void Book_Delete(Book *B);         //删除图书
+    void Book_Alter(Book *B);          //修改图书信息
+    void Book_Find(Book *B);           //查找图书
+    //学生管理
+    void Student_Add(User *U, Student *S);    //增加学生
+    void Student_Delete(User *U, Student *S); //删除学生
 };
+
 
 //添加图书
 void Admin::Book_Add(Book *B) {
@@ -488,6 +556,187 @@ void Admin::Book_Find(Book *B) {
     }
 }
 
-int main() {
+//增加学生
+void Admin::Student_Add(User *U, Student *S) {
+    Log a;
+    S[Student::Student_Number].zhuce(U,a,S);
+}
 
+void Admin::Student_Delete(User *U, Student *S) {
+    string a;
+    cout<<"请输入要删除学生的姓名："<<endl;
+    cin>>a;
+    int flag=0,find=0,find1=0;
+    for(int i=0; i<Student::Student_Number;i++)
+    {
+        if(S[i].GetName()==a)
+        {
+            find=i;
+            flag=1;
+            break;
+        }
+    }
+    if(flag==1)
+    {
+        for(int i=find;i<Student::Student_Number;i++)
+        {
+            S[i]=S[i+1];
+            if(i==Student::Student_Number-1){Student::Student_Number--;break;}
+        }
+        for(int i=0;i<U->User_Number;i++)
+        {
+            if(U[i].getName()==a)
+            {
+                find1=i;
+                break;
+            }
+        }
+        for(int i=find1;i<U->User_Number;i++)
+        {
+            if(i==U->User_Number-1)
+            {
+                U->User_Number--;break;
+            }
+            U[i]=U[i+1];
+        }
+
+    }
+}
+int Admin::Admin_Number=1;
+
+void main_interface()
+{   cout<<"|————————————图书管理员:L  密码:8————————————  |"<<endl;
+    cout<<"|默认3本书   编号:10000,书名:C++               |"<<endl;
+    cout<<"|           编号:10001,书名:C                |"<<endl;
+    cout<<"|          编号:10002,书名:C#               |"<<endl;
+    cout<<"I—————————————图书管理系统3.0————————————————I"<<endl;
+    cout<<"I—————————————①------注册------————————————I"<<endl;
+    cout<<"I—————————————②------登陆------————————————I"<<endl;
+    cout<<"I—————————————③------退出------————————————I"<<endl;
+}
+
+void Student_interface()
+{
+    cout<<"①-------查看图书"<<endl;
+    cout<<"②-------借书"<<endl;
+    cout<<"③-------还书"<<endl;
+    cout<<"④-------查询借还信息"<<endl;
+    cout<<"⑤-------修改密码"<<endl;
+    cout<<"⑥-------退出"<<endl;
+}
+
+void Admin_interface()
+{
+    cout<<"①-------增加图书"<<endl;//①②③④⑤⑥⑦⑧⑨
+    cout<<"②-------修改图书"<<endl;
+    cout<<"③-------删除图书"<<endl;
+    cout<<"④-------查询图书"<<endl;
+    cout<<"⑤-------增加学生"<<endl;
+    cout<<"⑥-------删除学生"<<endl;
+    cout<<"⑦-------退出"<<endl;
+}
+
+Book B[100]{Book("10000","C++","张三","A出版社",2),Book("10001","C","李四","777",3),Book("10002","C#","王五","888",1)};
+User U[100];
+Student S[100];
+Admin A[100]{Admin("A","8","123",U)};
+Log c;
+
+int main() {
+    while(1)
+    {
+        main_interface();
+        int a;
+        string aa;cin>>aa;
+        if( aa=="1" ) a=1;
+        else if(aa=="2")a=2;
+        else if(aa=="3")a=3;
+        else{
+            cout<<"请按要求输入！"<<endl;
+            continue;
+        }
+        switch (a) {
+            case 1:
+            {
+                cout<<"       学生注册"<<endl;
+                S[Student::Student_Number].zhuce(U,c,S);
+                break;
+            }
+            case 2:
+            {
+                cout<<"       登陆"<<endl;
+                c.Login(U);
+                if(c.Is_Log==false)break;
+
+                if(c.u.Judge()==3)     //图书管理员
+                {
+                    int n=1;
+                    while(n)
+                    {
+                        Admin_interface();
+                        int b;
+                        cin>>b;
+                        switch(b)
+                        {
+                            case 1:
+                            {
+                                A[c.number].Book_Add(B);
+                                break;
+                            }
+                            case 2:
+                            {
+                                A[c.number].Book_Alter(B);
+                                break;
+                            }
+                            case 3:
+                            {
+                                A[c.number].Book_Delete(B);
+                                break;
+                            }
+                            case 4:
+                            {
+                                A[c.number].Book_Find(B);
+                                break;
+                            }
+                            case 5:
+                            {
+                                A[c.number].Student_Add(U,S);
+                                break;
+                            }
+                            case 6:
+                            {
+                                A[c.number].Student_Delete(U,S);
+                                break;
+                            }
+                            default:
+                                n=0;
+                        }
+                    }
+                }
+                else if(c.u.Judge()==4)
+                {
+                    int n =1;
+                    while(1)
+                    {
+                        Student_interface();
+                        int b;cin>>b;
+                        switch(b)
+                        {
+                            case 1:
+                            {
+                                S[c.number].Book_Find(B);
+                                break;
+                            }
+                            case 2:
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return 0;
 }
