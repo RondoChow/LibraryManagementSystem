@@ -206,8 +206,9 @@ void Log::Login(User *p) {
         if(a==p[i].GetID()&&b==p[i].GetKey())
         {
             u.SetIdentity(p[i].GetIsAdmin(),p[i].GetIsStudent());
-            u.SetID(a);u.SetKey(b);u.Setname(p[i].getName());break;
-            flag=1;
+            u.SetID(a);u.SetKey(b);u.Setname(p[i].getName());flag=1;
+            break;
+
         }
     }
     if(flag==1)
