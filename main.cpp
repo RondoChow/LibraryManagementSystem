@@ -24,12 +24,12 @@ public:
     string GetName(){return Name;}      //获取图书的名字
     string GetAuthor(){return author;}  //获取图书的作者
     string GetPress(){return press;}    //获取图书的出版社
-    int GetNumber(){return number;}  //获取图书的数量
+    int GetNumber(){return number;}     //获取图书的数量
     void SetCode(string c);             //设置图书的索引号
     void SetName(string n);             //设置图书的名字
     void SetAuthor(string a);           //设置图书的作者
     void SetPress(string p);            //设置图书的出版社
-    void SetNumber(int num);         //设置图书的数量
+    void SetNumber(int num);            //设置图书的数量
     void Display();
     friend istream  &operator >> (istream &stream,Book &b);  //重载操作符>>
     friend ostream  &operator << (ostream &stream,Book &b);  //重载操作符<<
@@ -90,12 +90,13 @@ protected:
     string name;               //用户姓名
     string ID;                 //用户账号
     string key;                //用户账号密码
+    string institute;          //用户学院
     bool Is_Admin,Is_Student;  //用户类型
 
 public:
-    User(string n, string id, string k)  //构造函数
+    User(string n, string id, string k, string i)  //构造函数
     {
-        name = n; ID = id; key = k;
+        name = n; ID = id; key = k; institute = i;
     }
     static int User_Number;
     void SetIdentity(bool ad,bool is)//设置用户类型
@@ -105,9 +106,11 @@ public:
     void Setname(string n);        //设置用户姓名
     void SetID(string id);         //设置账号
     void SetKey(string k);         //设置密码
+    void SetInstitute(string i);   //设置学院
     string getName(){return name;} //获取用户姓名
     string GetID(){return ID;}     //获取用户账号
     string GetKey(){return key;}   //获取用户密码
+    string GetInstitute(){return institute;}
     bool GetIsAdmin(){return Is_Admin;}\
     bool GetIsStudent(){return Is_Student;}
 };
@@ -128,6 +131,10 @@ void User::SetID(string id) {
 
 void User::SetKey(string k) {
     key = k;
+}
+
+void User::SetInstitute(string i) {
+    institute = i;
 }
 
 int User::User_Number=0;
@@ -163,12 +170,14 @@ void Log::SignIN(User *p) {
         if(f==1){break;}
     }
 
-    string b;
+    string b,bb;
     string c, cc;
     while(1)
     {
         cout<<"请输入姓名："<<endl;
         cin>>b;
+        cout<<"请输入学院："<<endl;
+        cin>>bb;
         cout<<"请输入密码："<<endl;
         cin>>c;
         cout<<"请再次输入密码："<<endl;
@@ -186,9 +195,11 @@ void Log::SignIN(User *p) {
     (p+User::User_Number)->SetID(a);
     (p+User::User_Number)->SetKey(c);
     (p+User::User_Number)->SetIdentity(false,true);
+    (p+User::User_Number)->SetInstitute(bb);
     u.Setname(b);
     u.SetID(a);
     u.SetKey(c);
+    u.SetInstitute(bb);
     number=User::User_Number;
     User::User_Number++;
 
@@ -239,7 +250,7 @@ void Log::Login(User *p) {
 class Student: public User, public Log, public Book
 {
 protected:
-    string institute;
+
 
 public:
     static int Student_Number;
@@ -254,6 +265,7 @@ public:
         User::Setname(a.u.getName());
         User::SetID(a.u.GetID());
         User::SetKey(a.u.GetKey());
+        User::SetInstitute(a.u.GetInstitute());
         S[Student::Student_Number].Setname(a.u.getName());
         Student::Student_Number++;
     }
