@@ -8,17 +8,19 @@ class Book
 {
 protected:
     string code, Name, author, press;
-    int number; //索取号、书名、作者、出版社、最大借阅量
+    int number=10; //索取号、书名、作者、出版社、最大借阅量
     bool Is_lend;  //书是否借出
 
 public:
+    static int Book_Number;
     Book(string c, string n, string a, string p, int num) //构造函数
     {
         code = c; Name = n; author = a;
         press = p; number = num;
         Is_lend = false;
+        Book_Number++;
     }
-    static int Book_Number;             //图书的数量
+                //图书的数量
     Book(){Is_lend=false;}
     string Getcode(){return code;}      //获取图书的索引号
     string GetName(){return Name;}      //获取图书的名字
@@ -27,6 +29,9 @@ public:
     int GetNumber(){return number;}     //获取图书的数量
     void SetCode(string c);             //设置图书的索引号
     void SetName(string n);             //设置图书的名字
+    bool GetIs_Lend(){return Is_lend;}
+    void SetIs_Lend(bool);
+
     void SetAuthor(string a);           //设置图书的作者
     void SetPress(string p);            //设置图书的出版社
     void SetNumber(int num);            //设置图书的数量
@@ -34,6 +39,7 @@ public:
     friend istream  &operator >> (istream &stream,Book &b);  //重载操作符>>
     friend ostream  &operator << (ostream &stream,Book &b);  //重载操作符<<
 };
+void Book::SetIs_Lend(bool a){Is_lend =a;}
 
 ostream &operator << (ostream &stream,Book &b)
 {
@@ -77,8 +83,8 @@ void Book::SetNumber(int num) {
 }
 
 void Book::Display() {
-    cout<<"索引号："<<setw(10)<<Getcode()<<"书名："<<setw(10)<<GetName()<<"作者："<<setw(10)<<GetAuthor()
-    <<"出版社："<<setw(10)<<GetPress()<<"馆藏数量："<<setw(10)<<GetNumber()<<endl;
+    cout<<"索引号："<<Getcode()<<setw(10)<<"书名："<<GetName()<<setw(10)<<"作者："<<GetAuthor()<<setw(10)
+    <<"出版社："<<GetPress()<<setw(10)<<"馆藏数量："<<GetNumber()<<setw(10)<<endl;
 }
 int Book::Book_Number=0;
 
@@ -105,6 +111,7 @@ public:
     int Judge();                   //判断用户类型
     void Setname(string n);        //设置用户姓名
     void SetID(string id);         //设置账号
+    void SetIs_Lend(bool);
     void SetKey(string k);         //设置密码
     void SetInstitute(string i);   //设置学院
     string getName(){return name;} //获取用户姓名
@@ -251,7 +258,7 @@ class Student: public User, public Log, public Book
 {
 protected:
 
-
+    Book s[100];
 public:
     static int Student_Number;
     static int max_lent;
@@ -276,6 +283,7 @@ public:
     void Book_Find(Book *B);   //查找图书
     void Book_LR();            //借阅情况
     void Book_Lent(Book *B);   //借书
+    void Book_Ruturn(Book *B);
 };
 int Student::max_lent=0;
 int Student::Student_Number=0;
@@ -314,13 +322,121 @@ void Student::Book_Find(Book *B) {
 }
 
 void Student::Book_LR() {
-    cout<<"-------借阅信息-------"<<endl;
+    cout<<"---------借阅信息---------"<<endl;
+    int n=8;
+    int flag=0;
     cout<<"姓名："<<setw(10)<<getName()<<"学号："<<setw(10)<<GetID()<<"学院："<<setw(10)<<institute<<"最大借阅量"<<setw(10)<<max_lent<<endl;
+    cout<<"当前借书信息:"<<endl;
+    for(int i=0;i<=s->Book_Number;i++)
+    {
+        if(s[i].GetIs_Lend()==true){flag=1;break;}
+    }
+    if(flag==0)cout<<"无借书记录\n";
+    else
+    {
+        int LendBookNumber=0;
+        for(int i=0;i<=Book::Book_Number;i++)
+        {
+            if(s[i].GetIs_Lend()==true)
+            { s[i].Display();
+                LendBookNumber++;
+            }
+        }
 
+
+
+        cout<<"还可以借"<<n-LendBookNumber<<"本书."<<endl;
+    }
 }
 
 void Student::Book_Lent(Book *B) {
+    for(int i=0;i<Book_Number;i++)
+    {
+        (s+i)->SetCode((B+i)->Getcode());
+        (s+i)->SetName((B+i)->GetName());
+        (s+i)->SetAuthor((B+i)->GetAuthor());
+        (s+i)->SetPress((B+i)->GetPress());
+        (s+i)->Book_Number=(B+i)->Book_Number;
+    }
+    Book *b=B;
+    string a;
+    cout<<"---------借书---------"<<endl;
+    cout<<"请输入需要借阅书籍的索引号或书名:";
+    cin>>a;
+    int Find=0,flag1=0;
+    int LendBookNumber=0;
+    for(int i=0;i<=Book::Book_Number;i++)
+    {
+        if((a==b[i].Getcode()||a==b[i].GetName())&&b[i].GetIs_Lend()==false)
+        {
+            flag1=1;Find =i;break;
+        }
+    }
+    for(int i=0;i<=Book::Book_Number;i++)
+    {
+        if(s[i].GetIs_Lend()==true)
+        {
+            LendBookNumber++;
+        }
+    }
+    if(!flag1)cout<<"图书不存在或已经被借出!"<<endl;
+    else
+    {
+        if(LendBookNumber==10) {
+            throw LendBookNumber;
+        }
+        cout<<"借阅成功!"<<endl;
+        b[Find].SetIs_Lend(true);
+        s[Find].SetIs_Lend(true);
+        ofstream lendmessage("Lendmessage.txt",ios::app);
+        if(lendmessage.is_open())
+        {
+            lendmessage << "姓名:"<<LogName<<endl;
+            lendmessage << "    借书索引号:"<<s[Find].Getcode();
+            lendmessage.close();
+        }
+    }
+}
 
+void Student::Book_Ruturn(Book *B)
+{
+    Book *b=B;int flag=0,Find=0;
+    cout<<"---------还书---------"<<endl;
+    string a;
+    cout<<"请输入需要归还书籍的索引号或书名:";
+    cin>>a;
+    for(int j=0;j<Book::Book_Number;j++)
+    {
+        if(a==b[j].Getcode()||a==b[j].GetName())
+        {
+            flag=1;Find =j;break;
+        }
+    }
+    if(flag==1){
+        if(s[Find].GetIs_Lend()==true)
+        {
+
+               s[Find].SetIs_Lend(false);
+                b[Find].SetIs_Lend(false);
+                ofstream lendmessage("Lendmessage.txt",ios::app);
+                if(lendmessage.is_open())
+                {
+                    lendmessage << "姓名:"<<LogName<<endl;
+                    lendmessage << "    还书编号:"<<s[Find].Getcode();
+                    lendmessage.close();
+                }
+                cout<<"归还成功！"<<endl;
+
+        }
+        else
+        {
+            cout<<"此书未被借阅"<<endl;
+        }
+    }
+    else
+    {
+        cout<<"未找到此书！"<<endl;
+    }
 }
 
 //图书馆管理员
@@ -336,6 +452,7 @@ public:
     {
         U[U->User_Number].Setname(n);
         U[U->User_Number].SetKey(k);
+        U[U->User_Number].SetID(id);
         Is_Admin=1;Is_Student=0;
         U[U->User_Number].SetIdentity(true,false);
         U->User_Number++;
@@ -634,7 +751,7 @@ void Student_interface()
     cout<<"②-------借书"<<endl;
     cout<<"③-------还书"<<endl;
     cout<<"④-------查询借还信息"<<endl;
-    cout<<"⑤-------修改密码"<<endl;
+    cout<<"⑤-------图书展示"<<endl;
     cout<<"⑥-------退出"<<endl;
 }
 
@@ -658,6 +775,7 @@ Log c;
 int main() {
     while(1)
     {
+        cout<<Book::Book_Number<<endl;
         main_interface();
         int a;
         string aa;cin>>aa;
@@ -729,7 +847,7 @@ int main() {
                 else if(c.u.Judge()==4)
                 {
                     int n =1;
-                    while(1)
+                    while(n)
                     {
                         Student_interface();
                         int b;cin>>b;
@@ -743,13 +861,55 @@ int main() {
                             case 2:
                             {
 
+                                try{
+                                    S[c.number].Book_Lent(B);
+                                }
+                                catch(int Num)
+                                {
+                                    cout<<"超出最大借书数量，借书失败。"<<endl;
+                                }
+
+                                break;
                             }
+                            case 3:
+                            {
+                                S[c.number].Book_Ruturn(B);
+                                break;
+                            }
+                            case 4:
+                            {
+                                S[c.number].Book_LR();
+                                break;
+                            }
+                            case 5:
+                            {
+                                S[c.number].Book_Show(B);
+                                break;
+                            }
+                            default:
+                                n=0;
                         }
+
                     }
                 }
+                else break;
+
             }
+            case 3:
+            {
+                cout<<"             系统已退出"<<endl;
+                //return 0;
+                break;
+            }
+            default:
+                break;
+
         }
+        cin.get();//吸收回车符
+        cout<<"按回车键返回主界面\n";
+        cin.get();
     }
+
 
     return 0;
 }
