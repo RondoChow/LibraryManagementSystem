@@ -8,15 +8,15 @@ class Book
 {
 protected:
     string code, Name, author, press;
-    int number=10; //索取号、书名、作者、出版社、最大借阅量
+    int number; //索取号、书名、作者、出版社、最大借阅量
     bool Is_lend;  //书是否借出
 
 public:
     static int Book_Number;
-    Book(string c, string n, string a, string p, int num) //构造函数
+    Book(string c, string n, string a, string p,int num) //构造函数
     {
         code = c; Name = n; author = a;
-        press = p; number = num;
+        press = p;number=num;
         Is_lend = false;
         Book_Number++;
     }
@@ -29,8 +29,8 @@ public:
     int GetNumber(){return number;}     //获取图书的数量
     void SetCode(string c);             //设置图书的索引号
     void SetName(string n);             //设置图书的名字
-    bool GetIs_Lend(){return Is_lend;}
-    void SetIs_Lend(bool);
+    bool GetIs_Lend(){return Is_lend;}; //获取书的借阅情况
+    void SetIs_Lend(bool);              //设置书的借阅情况
 
     void SetAuthor(string a);           //设置图书的作者
     void SetPress(string p);            //设置图书的出版社
@@ -83,8 +83,8 @@ void Book::SetNumber(int num) {
 }
 
 void Book::Display() {
-    cout<<"索引号："<<Getcode()<<setw(10)<<"书名："<<GetName()<<setw(10)<<"作者："<<GetAuthor()<<setw(10)
-    <<"出版社："<<GetPress()<<setw(10)<<"馆藏数量："<<GetNumber()<<setw(10)<<endl;
+    cout<<"索引号："<<Getcode()<<setw(-10)<<"书名："<<GetName()<<setw(10)<<"作者："<<GetAuthor()<<setw(10)
+    <<"出版社："<<GetPress()<<setw(10)<<endl;
 }
 int Book::Book_Number=0;
 
@@ -285,7 +285,7 @@ public:
     void Book_Lent(Book *B);   //借书
     void Book_Ruturn(Book *B);
 };
-int Student::max_lent=0;
+int Student::max_lent=10;
 int Student::Student_Number=0;
 
 void Student::Book_Show(Book *B) {
@@ -323,9 +323,9 @@ void Student::Book_Find(Book *B) {
 
 void Student::Book_LR() {
     cout<<"---------借阅信息---------"<<endl;
-    int n=8;
+    int n=10;
     int flag=0;
-    cout<<"姓名："<<setw(10)<<getName()<<"学号："<<setw(10)<<GetID()<<"学院："<<setw(10)<<institute<<"最大借阅量"<<setw(10)<<max_lent<<endl;
+    cout<<"姓名："<<setw(10)<<getName()<<"学号："<<setw(10)<<GetID()<<"学院："<<setw(10)<<institute<<"最大借阅量："<<setw(10)<<max_lent<<endl;
     cout<<"当前借书信息:"<<endl;
     for(int i=0;i<=s->Book_Number;i++)
     {
@@ -343,9 +343,7 @@ void Student::Book_LR() {
             }
         }
 
-
-
-        cout<<"还可以借"<<n-LendBookNumber<<"本书."<<endl;
+        cout<<"还可以借"<<n-LendBookNumber<<"本书."<<endl<<endl;
     }
 }
 
@@ -735,11 +733,8 @@ void Admin::Student_Delete(User *U, Student *S) {
 int Admin::Admin_Number=1;
 
 void main_interface()
-{   cout<<"|————————————图书管理员:L  密码:8————————————  |"<<endl;
-    cout<<"|默认3本书   编号:10000,书名:C++               |"<<endl;
-    cout<<"|           编号:10001,书名:C                |"<<endl;
-    cout<<"|          编号:10002,书名:C#               |"<<endl;
-    cout<<"I—————————————图书管理系统3.0————————————————I"<<endl;
+{
+    cout<<"I———————————————图书管理系统—————————————————I"<<endl;
     cout<<"I—————————————①------注册------————————————I"<<endl;
     cout<<"I—————————————②------登陆------————————————I"<<endl;
     cout<<"I—————————————③------退出------————————————I"<<endl;
@@ -757,7 +752,7 @@ void Student_interface()
 
 void Admin_interface()
 {
-    cout<<"①-------增加图书"<<endl;//①②③④⑤⑥⑦⑧⑨
+    cout<<"①-------增加图书"<<endl;
     cout<<"②-------修改图书"<<endl;
     cout<<"③-------删除图书"<<endl;
     cout<<"④-------查询图书"<<endl;
@@ -898,7 +893,7 @@ int main() {
             case 3:
             {
                 cout<<"             系统已退出"<<endl;
-                //return 0;
+                return 0;
                 break;
             }
             default:
@@ -909,7 +904,5 @@ int main() {
         cout<<"按回车键返回主界面\n";
         cin.get();
     }
-
-
     return 0;
 }
