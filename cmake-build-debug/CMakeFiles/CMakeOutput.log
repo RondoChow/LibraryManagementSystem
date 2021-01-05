@@ -1,0 +1,314 @@
+The system is: Darwin - 19.6.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang 
+Build flags: -march=core2;-mtune=haswell;-mssse3;-ftree-vectorize;-fPIC;-fPIE;-fstack-protector-strong;-O2;-pipe;-isystem;/Users/rondo/miniconda3/include
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is Clang, found in "/Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ 
+Build flags: -march=core2;-mtune=haswell;-mssse3;-ftree-vectorize;-fPIC;-fPIE;-fstack-protector-strong;-O2;-pipe;-stdlib=libc++;-fvisibility-inlines-hidden;-std=c++14;-fmessage-length=0;-isystem;/Users/rondo/miniconda3/include
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is Clang, found in "/Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0bd7c/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_0bd7c.dir/build.make CMakeFiles/cmTC_0bd7c.dir/build
+Building C object CMakeFiles/cmTC_0bd7c.dir/testCCompiler.c.o
+/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/rondo/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_0bd7c.dir/testCCompiler.c.o   -c /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_0bd7c
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0bd7c.dir/link.txt --verbose=1
+/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/rondo/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/rondo/miniconda3/lib -L/Users/rondo/miniconda3/lib  CMakeFiles/cmTC_0bd7c.dir/testCCompiler.c.o  -o cmTC_0bd7c 
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f2dfd/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_f2dfd.dir/build.make CMakeFiles/cmTC_f2dfd.dir/build
+Building C object CMakeFiles/cmTC_f2dfd.dir/CMakeCCompilerABI.c.o
+/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/rondo/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -v -Wl,-v -o CMakeFiles/cmTC_f2dfd.dir/CMakeCCompilerABI.c.o   -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+clang version 10.0.0 
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/rondo/miniconda3/bin
+clang-10: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ (in-process)
+ "/Users/rondo/miniconda3/bin/clang-10" -cc1 -triple x86_64-apple-macosx10.15.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mframe-pointer=all -fno-rounding-math -masm-verbose -munwind-tables -target-sdk-version=10.15 -target-cpu core2 -target-feature +ssse3 -dwarf-column-info -debugger-tuning=lldb -target-linker-version 241.9 -v -resource-dir /Users/rondo/miniconda3/lib/clang/10.0.0 -isystem /Users/rondo/miniconda3/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include -internal-isystem /Users/rondo/miniconda3/lib/clang/10.0.0/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include -O2 -fdebug-compilation-dir /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fobjc-runtime=macosx-10.15.0 -fmax-type-align=16 -fdiagnostics-show-option -vectorize-loops -vectorize-slp -o CMakeFiles/cmTC_f2dfd.dir/CMakeCCompilerABI.c.o -x c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+clang -cc1 version 10.0.0 based upon LLVM 10.0.0 default target x86_64-apple-darwin19.6.0
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include"
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Users/rondo/miniconda3/include
+ /Users/rondo/miniconda3/lib/clang/10.0.0/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking C executable cmTC_f2dfd
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2dfd.dir/link.txt --verbose=1
+/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/rondo/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/rondo/miniconda3/lib -L/Users/rondo/miniconda3/lib -v -Wl,-v CMakeFiles/cmTC_f2dfd.dir/CMakeCCompilerABI.c.o  -o cmTC_f2dfd 
+clang version 10.0.0 
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/rondo/miniconda3/bin
+ "/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-ld" -demangle -lto_library /Users/rondo/miniconda3/lib/libLTO.10.dylib -dynamic -arch x86_64 -macosx_version_min 10.15.0 -pie -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -o cmTC_f2dfd -L/Users/rondo/miniconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/rondo/miniconda3/lib -v CMakeFiles/cmTC_f2dfd.dir/CMakeCCompilerABI.c.o -lSystem /Users/rondo/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-450.3
+BUILD 02:41:06 May 15 2020
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/Users/rondo/miniconda3/lib
+	/Users/rondo/miniconda3/lib
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib
+Framework search paths:
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/Users/rondo/miniconda3/include]
+    add: [/Users/rondo/miniconda3/lib/clang/10.0.0/include]
+    add: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+  end of search list found
+  collapse include dir [/Users/rondo/miniconda3/include] ==> [/Users/rondo/miniconda3/include]
+  collapse include dir [/Users/rondo/miniconda3/lib/clang/10.0.0/include] ==> [/Users/rondo/miniconda3/lib/clang/10.0.0/include]
+  collapse include dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+  implicit include dirs: [/Users/rondo/miniconda3/include;/Users/rondo/miniconda3/lib/clang/10.0.0/include;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_f2dfd/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_f2dfd.dir/build.make CMakeFiles/cmTC_f2dfd.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_f2dfd.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/rondo/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -v -Wl -v -o CMakeFiles/cmTC_f2dfd.dir/CMakeCCompilerABI.c.o   -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang version 10.0.0 ]
+  ignore line: [Target: x86_64-apple-darwin13.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Users/rondo/miniconda3/bin]
+  ignore line: [clang-10: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ (in-process)]
+  ignore line: [ "/Users/rondo/miniconda3/bin/clang-10" -cc1 -triple x86_64-apple-macosx10.15.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mframe-pointer=all -fno-rounding-math -masm-verbose -munwind-tables -target-sdk-version=10.15 -target-cpu core2 -target-feature +ssse3 -dwarf-column-info -debugger-tuning=lldb -target-linker-version 241.9 -v -resource-dir /Users/rondo/miniconda3/lib/clang/10.0.0 -isystem /Users/rondo/miniconda3/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include -internal-isystem /Users/rondo/miniconda3/lib/clang/10.0.0/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include -O2 -fdebug-compilation-dir /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fobjc-runtime=macosx-10.15.0 -fmax-type-align=16 -fdiagnostics-show-option -vectorize-loops -vectorize-slp -o CMakeFiles/cmTC_f2dfd.dir/CMakeCCompilerABI.c.o -x c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 10.0.0 based upon LLVM 10.0.0 default target x86_64-apple-darwin19.6.0]
+  ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include"]
+  ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/Library/Frameworks"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /Users/rondo/miniconda3/include]
+  ignore line: [ /Users/rondo/miniconda3/lib/clang/10.0.0/include]
+  ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+  ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks (framework directory)]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_f2dfd]
+  ignore line: [/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2dfd.dir/link.txt --verbose=1]
+  ignore line: [/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/rondo/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -Wl -pie -Wl -headerpad_max_install_names -Wl -dead_strip_dylibs -Wl -rpath /Users/rondo/miniconda3/lib -L/Users/rondo/miniconda3/lib -v -Wl -v CMakeFiles/cmTC_f2dfd.dir/CMakeCCompilerABI.c.o  -o cmTC_f2dfd ]
+  ignore line: [clang version 10.0.0 ]
+  ignore line: [Target: x86_64-apple-darwin13.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Users/rondo/miniconda3/bin]
+  link line: [ "/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-ld" -demangle -lto_library /Users/rondo/miniconda3/lib/libLTO.10.dylib -dynamic -arch x86_64 -macosx_version_min 10.15.0 -pie -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -o cmTC_f2dfd -L/Users/rondo/miniconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/rondo/miniconda3/lib -v CMakeFiles/cmTC_f2dfd.dir/CMakeCCompilerABI.c.o -lSystem /Users/rondo/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Users/rondo/miniconda3/lib/libLTO.10.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.15.0] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_f2dfd] ==> ignore
+    arg [-L/Users/rondo/miniconda3/lib] ==> dir [/Users/rondo/miniconda3/lib]
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-dead_strip_dylibs] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/Users/rondo/miniconda3/lib] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_f2dfd.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Users/rondo/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Users/rondo/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/Users/rondo/miniconda3/lib;/Users/rondo/miniconda3/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib]
+  Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Users/rondo/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/Users/rondo/miniconda3/lib] ==> [/Users/rondo/miniconda3/lib]
+  collapse library dir [/Users/rondo/miniconda3/lib] ==> [/Users/rondo/miniconda3/lib]
+  collapse library dir [/Users/rondo/miniconda3/lib] ==> [/Users/rondo/miniconda3/lib]
+  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib]
+  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks]
+  implicit libs: []
+  implicit dirs: [/Users/rondo/miniconda3/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib]
+  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_25be2/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_25be2.dir/build.make CMakeFiles/cmTC_25be2.dir/build
+Building CXX object CMakeFiles/cmTC_25be2.dir/testCXXCompiler.cxx.o
+/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++    -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -isystem /Users/rondo/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_25be2.dir/testCXXCompiler.cxx.o -c /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_25be2
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25be2.dir/link.txt --verbose=1
+/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++  -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -isystem /Users/rondo/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/rondo/miniconda3/lib -L/Users/rondo/miniconda3/lib  CMakeFiles/cmTC_25be2.dir/testCXXCompiler.cxx.o  -o cmTC_25be2 
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2bc86/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_2bc86.dir/build.make CMakeFiles/cmTC_2bc86.dir/build
+Building CXX object CMakeFiles/cmTC_2bc86.dir/CMakeCXXCompilerABI.cpp.o
+/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++    -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -isystem /Users/rondo/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -v -Wl,-v -o CMakeFiles/cmTC_2bc86.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+clang version 10.0.0 
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/rondo/miniconda3/bin
+clang-10: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ (in-process)
+ "/Users/rondo/miniconda3/bin/clang-10" -cc1 -triple x86_64-apple-macosx10.15.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mframe-pointer=all -fno-rounding-math -masm-verbose -munwind-tables -target-sdk-version=10.15 -target-cpu core2 -target-feature +ssse3 -dwarf-column-info -debugger-tuning=lldb -target-linker-version 241.9 -v -resource-dir /Users/rondo/miniconda3/lib/clang/10.0.0 -isystem /Users/rondo/miniconda3/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -stdlib=libc++ -internal-isystem /Users/rondo/miniconda3/bin/../include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include -internal-isystem /Users/rondo/miniconda3/lib/clang/10.0.0/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include -O2 -std=c++14 -fdeprecated-macro -fdebug-compilation-dir /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fvisibility-inlines-hidden -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fobjc-runtime=macosx-10.15.0 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -vectorize-loops -vectorize-slp -o CMakeFiles/cmTC_2bc86.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 10.0.0 based upon LLVM 10.0.0 default target x86_64-apple-darwin19.6.0
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/c++/v1"
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include"
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Users/rondo/miniconda3/include
+ /Users/rondo/miniconda3/bin/../include/c++/v1
+ /Users/rondo/miniconda3/lib/clang/10.0.0/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking CXX executable cmTC_2bc86
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2bc86.dir/link.txt --verbose=1
+/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++  -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -isystem /Users/rondo/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/rondo/miniconda3/lib -L/Users/rondo/miniconda3/lib -v -Wl,-v CMakeFiles/cmTC_2bc86.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_2bc86 
+clang version 10.0.0 
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/rondo/miniconda3/bin
+ "/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-ld" -demangle -lto_library /Users/rondo/miniconda3/lib/libLTO.10.dylib -dynamic -arch x86_64 -macosx_version_min 10.15.0 -pie -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -o cmTC_2bc86 -L/Users/rondo/miniconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/rondo/miniconda3/lib -v CMakeFiles/cmTC_2bc86.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Users/rondo/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-450.3
+BUILD 02:41:06 May 15 2020
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/Users/rondo/miniconda3/lib
+	/Users/rondo/miniconda3/lib
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib
+Framework search paths:
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/Users/rondo/miniconda3/include]
+    add: [/Users/rondo/miniconda3/bin/../include/c++/v1]
+    add: [/Users/rondo/miniconda3/lib/clang/10.0.0/include]
+    add: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+  end of search list found
+  collapse include dir [/Users/rondo/miniconda3/include] ==> [/Users/rondo/miniconda3/include]
+  collapse include dir [/Users/rondo/miniconda3/bin/../include/c++/v1] ==> [/Users/rondo/miniconda3/include/c++/v1]
+  collapse include dir [/Users/rondo/miniconda3/lib/clang/10.0.0/include] ==> [/Users/rondo/miniconda3/lib/clang/10.0.0/include]
+  collapse include dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+  implicit include dirs: [/Users/rondo/miniconda3/include;/Users/rondo/miniconda3/include/c++/v1;/Users/rondo/miniconda3/lib/clang/10.0.0/include;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_2bc86/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_2bc86.dir/build.make CMakeFiles/cmTC_2bc86.dir/build]
+  ignore line: [Building CXX object CMakeFiles/cmTC_2bc86.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++    -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -isystem /Users/rondo/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -v -Wl -v -o CMakeFiles/cmTC_2bc86.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang version 10.0.0 ]
+  ignore line: [Target: x86_64-apple-darwin13.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Users/rondo/miniconda3/bin]
+  ignore line: [clang-10: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ (in-process)]
+  ignore line: [ "/Users/rondo/miniconda3/bin/clang-10" -cc1 -triple x86_64-apple-macosx10.15.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mframe-pointer=all -fno-rounding-math -masm-verbose -munwind-tables -target-sdk-version=10.15 -target-cpu core2 -target-feature +ssse3 -dwarf-column-info -debugger-tuning=lldb -target-linker-version 241.9 -v -resource-dir /Users/rondo/miniconda3/lib/clang/10.0.0 -isystem /Users/rondo/miniconda3/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -stdlib=libc++ -internal-isystem /Users/rondo/miniconda3/bin/../include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include -internal-isystem /Users/rondo/miniconda3/lib/clang/10.0.0/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include -O2 -std=c++14 -fdeprecated-macro -fdebug-compilation-dir /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fvisibility-inlines-hidden -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fobjc-runtime=macosx-10.15.0 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -vectorize-loops -vectorize-slp -o CMakeFiles/cmTC_2bc86.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang -cc1 version 10.0.0 based upon LLVM 10.0.0 default target x86_64-apple-darwin19.6.0]
+  ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/c++/v1"]
+  ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include"]
+  ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/Library/Frameworks"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /Users/rondo/miniconda3/include]
+  ignore line: [ /Users/rondo/miniconda3/bin/../include/c++/v1]
+  ignore line: [ /Users/rondo/miniconda3/lib/clang/10.0.0/include]
+  ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+  ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks (framework directory)]
+  ignore line: [End of search list.]
+  ignore line: [Linking CXX executable cmTC_2bc86]
+  ignore line: [/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2bc86.dir/link.txt --verbose=1]
+  ignore line: [/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++  -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -isystem /Users/rondo/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -Wl -pie -Wl -headerpad_max_install_names -Wl -dead_strip_dylibs -Wl -rpath /Users/rondo/miniconda3/lib -L/Users/rondo/miniconda3/lib -v -Wl -v CMakeFiles/cmTC_2bc86.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_2bc86 ]
+  ignore line: [clang version 10.0.0 ]
+  ignore line: [Target: x86_64-apple-darwin13.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Users/rondo/miniconda3/bin]
+  link line: [ "/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-ld" -demangle -lto_library /Users/rondo/miniconda3/lib/libLTO.10.dylib -dynamic -arch x86_64 -macosx_version_min 10.15.0 -pie -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -o cmTC_2bc86 -L/Users/rondo/miniconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/rondo/miniconda3/lib -v CMakeFiles/cmTC_2bc86.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Users/rondo/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Users/rondo/miniconda3/lib/libLTO.10.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.15.0] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_2bc86] ==> ignore
+    arg [-L/Users/rondo/miniconda3/lib] ==> dir [/Users/rondo/miniconda3/lib]
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-dead_strip_dylibs] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/Users/rondo/miniconda3/lib] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_2bc86.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lc++] ==> lib [c++]
+    arg [-lSystem] ==> lib [System]
+    arg [/Users/rondo/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Users/rondo/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/Users/rondo/miniconda3/lib;/Users/rondo/miniconda3/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib]
+  Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Users/rondo/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/Users/rondo/miniconda3/lib] ==> [/Users/rondo/miniconda3/lib]
+  collapse library dir [/Users/rondo/miniconda3/lib] ==> [/Users/rondo/miniconda3/lib]
+  collapse library dir [/Users/rondo/miniconda3/lib] ==> [/Users/rondo/miniconda3/lib]
+  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib]
+  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks]
+  implicit libs: [c++]
+  implicit dirs: [/Users/rondo/miniconda3/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib]
+  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks]
+
+

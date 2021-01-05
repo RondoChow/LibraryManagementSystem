@@ -1,0 +1,18 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem
+-- The C compiler identification is Clang 10.0.0
+-- The CXX compiler identification is Clang 10.0.0
+-- Check for working C compiler: /Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang
+-- Check for working C compiler: /Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++
+-- Check for working CXX compiler: /Users/rondo/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/rondo/CLionProjects/面向对象编程/大作业/LibraryManagementSystem/cmake-build-debug
